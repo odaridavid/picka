@@ -29,22 +29,22 @@ class Picka {
         ) {
 
             val intent = Intent().apply {
-
                 val typeFormat = mediaType.typeFormat
+                val typeName = typeFormat.substring(0, typeFormat.indexOf('/'))
 
                 type = typeFormat
                 action = Intent.ACTION_GET_CONTENT
 
-                if (mimetypes != null) {
-                    mimetypes.forEach { type ->
-                        if (!type.contains(typeFormat.substring(0, typeFormat.length - 2))) {
-                            val typeName = type.substring(0, type.indexOf('/'))
+                mimetypes?.let { types ->
+                    types.forEach { type ->
+                        if (!type.contains(typeName)) {
                             throw MimeTypeException("Invalid Mime Type Format, use $typeName mime types")
                         }
                     }
-                    putExtra(Intent.EXTRA_MIME_TYPES, mimetypes)
+                    putExtra(Intent.EXTRA_MIME_TYPES, types)
                 }
             }
+
             val media: String = when (mediaType) {
                 MediaType.IMAGE -> activity.getString(R.string.label_media_type_image)
                 MediaType.VIDEO -> activity.getString(R.string.label_media_type_video)
