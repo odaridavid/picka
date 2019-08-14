@@ -2,7 +2,7 @@ package com.davidodari.picka
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.davidodari.picka.core.MediaType
+import com.davidodari.picka.core.media.MediaType
 import com.davidodari.picka.core.Picka
 import kotlinx.android.synthetic.main.activity_main.*
 

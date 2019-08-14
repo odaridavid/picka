@@ -3,6 +3,7 @@ package com.davidodari.picka.core
 import android.app.Activity
 import android.content.Intent
 import com.davidodari.picka.core.exceptions.MimeTypeException
+import com.davidodari.picka.core.media.MediaType
 
 /**
  * Created By David Odari

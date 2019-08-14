@@ -1,4 +1,4 @@
-package com.davidodari.picka.core
+package com.davidodari.picka.core.media
 
 /**
  * Created By David Odari
