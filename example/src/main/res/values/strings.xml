@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">Picka</string>
+    <string name="pick_media">Pick Media</string>
+</resources>
