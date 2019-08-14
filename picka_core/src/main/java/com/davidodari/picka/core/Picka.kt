@@ -18,7 +18,7 @@ class Picka {
 
         /**
          * @param activity caller activity from which image is selected
-         * @param mediaTypes typeFormat(s) of media to be presented
+         * @param mediaType typeFormat of media to be presented
          * @param mimetypes the supported mimetypes for specified mediatype
          */
         @JvmOverloads
