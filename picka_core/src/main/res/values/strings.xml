@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">picka_core</string>
+
+    <string name="label_media_type_image">Image</string>
+    <string name="label_media_type_video">Video</string>
+
+    <string name="label_select_media">Select %1$s</string>
+</resources>
