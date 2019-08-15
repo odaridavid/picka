@@ -46,16 +46,20 @@ class Picka {
                 }
             }
 
-            val media: String = when (mediaType) {
-                MediaType.IMAGE -> activity.getString(R.string.label_media_type_image)
-                MediaType.VIDEO -> activity.getString(R.string.label_media_type_video)
-            }
+            val media: String = chooserMediaTypeTitle(mediaType, activity)
             activity.startActivityForResult(
                 Intent.createChooser(
                     intent,
                     activity.getString(R.string.label_select_media, media)
                 ), ACTION_PICK_MEDIA
             )
+        }
+
+        private fun chooserMediaTypeTitle(mediaType: MediaType, activity: Activity): String {
+            return when (mediaType) {
+                MediaType.IMAGE -> activity.getString(R.string.label_media_type_image)
+                MediaType.VIDEO -> activity.getString(R.string.label_media_type_video)
+            }
         }
     }
 }
