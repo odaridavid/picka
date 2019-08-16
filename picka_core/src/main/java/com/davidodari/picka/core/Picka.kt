@@ -2,6 +2,7 @@ package com.davidodari.picka.core
 
 import android.app.Activity
 import android.content.Intent
+import android.widget.ImageView
 import com.davidodari.picka.core.exceptions.MimeTypeException
 import com.davidodari.picka.core.media.MediaType
 
@@ -60,6 +61,21 @@ class Picka {
                 MediaType.IMAGE -> activity.getString(R.string.label_media_type_image)
                 MediaType.VIDEO -> activity.getString(R.string.label_media_type_video)
             }
+        }
+
+        fun collectResult(requestCode: Int, resultCode: Int, data: Intent?, views: Array<ImageView>? = null): Boolean {
+            if (requestCode == ACTION_PICK_MEDIA && Activity.RESULT_OK == resultCode) {
+                val selectedMediaUri = data?.data
+                views?.let { v ->
+                    v.forEach { view ->
+                        view.apply {
+                            setImageURI(selectedMediaUri)
+                        }
+                    }
+                }
+                return true
+            }
+            return false
         }
     }
 }
