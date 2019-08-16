@@ -19,3 +19,11 @@ The Result can then be retrieved from ```onActivityResult``` as shown
 ```kotlin
 val uri = Picka.collectMediaFile(requestCode, resultCode, data)
 ```
+
+### Download
+
+```groovy
+implementation "com.davidodari.picka:picka:1.0.0"
+```
+
+&copy David Odari 2019
