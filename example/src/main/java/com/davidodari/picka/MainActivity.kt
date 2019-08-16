@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        Picka.collectResult(requestCode, resultCode, data, arrayOf(put_image_view))
+        val uri = Picka.collectMediaFile(requestCode, resultCode, data)
+        uri?.let {
+            put_image_view.setImageURI(it)
+        }
     }
 
 }
