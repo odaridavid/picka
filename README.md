@@ -36,4 +36,4 @@ Then add the library to module level build.gradle.
 implementation "com.davidodari.picka:picka:1.0.0"
 ```
 
-&copy David Odari 2019
+&copy; David Odari 2019
