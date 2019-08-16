@@ -1,2 +1,5 @@
 # Picka
-Image Picking Library for Android
+
+Media Picking Library for Android
+
+<i> In Progress under develop</i>
