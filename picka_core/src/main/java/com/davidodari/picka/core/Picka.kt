@@ -2,7 +2,7 @@ package com.davidodari.picka.core
 
 import android.app.Activity
 import android.content.Intent
-import android.widget.ImageView
+import android.net.Uri
 import com.davidodari.picka.core.exceptions.MimeTypeException
 import com.davidodari.picka.core.media.MediaType
 
@@ -38,21 +38,19 @@ class Picka {
                 action = Intent.ACTION_GET_CONTENT
 
                 mimetypes?.let { types ->
+
                     types.forEach { type ->
-                        if (!type.contains(typeName)) {
+                        if (!type.contains(typeName))
                             throw MimeTypeException("Invalid Mime Type Format, use $typeName mime types")
-                        }
                     }
+
                     putExtra(Intent.EXTRA_MIME_TYPES, types)
                 }
             }
-
             val media: String = chooserMediaTypeTitle(mediaType, activity)
+
             activity.startActivityForResult(
-                Intent.createChooser(
-                    intent,
-                    activity.getString(R.string.label_select_media, media)
-                ), ACTION_PICK_MEDIA
+                Intent.createChooser(intent, activity.getString(R.string.label_select_media, media)), ACTION_PICK_MEDIA
             )
         }
 
@@ -63,19 +61,12 @@ class Picka {
             }
         }
 
-        fun collectResult(requestCode: Int, resultCode: Int, data: Intent?, views: Array<ImageView>? = null): Boolean {
-            if (requestCode == ACTION_PICK_MEDIA && Activity.RESULT_OK == resultCode) {
-                val selectedMediaUri = data?.data
-                views?.let { v ->
-                    v.forEach { view ->
-                        view.apply {
-                            setImageURI(selectedMediaUri)
-                        }
-                    }
-                }
-                return true
-            }
-            return false
+        /**
+         * Returns URI to selected media file
+         */
+        fun collectResult(requestCode: Int, resultCode: Int, data: Intent?): Uri? {
+            val isPickingMedia = requestCode == ACTION_PICK_MEDIA && Activity.RESULT_OK == resultCode
+            return if (isPickingMedia) data?.data else null
         }
     }
 }
