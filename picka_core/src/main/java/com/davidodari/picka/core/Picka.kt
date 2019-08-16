@@ -64,7 +64,7 @@ class Picka {
         /**
          * Returns URI to selected media file
          */
-        fun collectResult(requestCode: Int, resultCode: Int, data: Intent?): Uri? {
+        fun collectMediaFile(requestCode: Int, resultCode: Int, data: Intent?): Uri? {
             val isPickingMedia = requestCode == ACTION_PICK_MEDIA && Activity.RESULT_OK == resultCode
             return if (isPickingMedia) data?.data else null
         }
