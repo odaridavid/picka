@@ -22,6 +22,16 @@ val uri = Picka.collectMediaFile(requestCode, resultCode, data)
 
 ### Download
 
+Add jitpack to project level build.gradle
+```groovy
+allprojects {
+ repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+ }
+}
+```
+Then add the library to module level build.gradle.
 ```groovy
 implementation "com.davidodari.picka:picka:1.0.0"
 ```
