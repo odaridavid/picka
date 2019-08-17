@@ -1,5 +1,8 @@
 # Picka
 
+[![Release](https://jitpack.io/v/Davidodari/picka.svg)]
+(https://jitpack.io/#Davidodari/picka)
+
 Simple Media Picking Library for Android
 
 ### Usage
