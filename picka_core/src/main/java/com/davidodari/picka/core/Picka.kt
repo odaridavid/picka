@@ -13,7 +13,6 @@ import com.davidodari.picka.core.media.MediaType
  **/
 class Picka {
 
-    //TODO Support multiple media types
     companion object {
 
         private const val ACTION_PICK_MEDIA = 1
