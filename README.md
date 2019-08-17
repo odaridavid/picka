@@ -21,6 +21,12 @@ The Result can then be retrieved from ```onActivityResult``` as shown
 ```kotlin
 val uri = Picka.collectMediaFile(requestCode, resultCode, data)
 ```
+#### Avaliable Media Types
+
+```kotlin
+MediaType.Image
+MediaType.Video
+```
 
 ### Download
 
