@@ -33,7 +33,7 @@ allprojects {
 ```
 Then add the library to module level build.gradle.
 ```groovy
- implementation 'com.github.Davidodari:picka:v1.0.0-alpha'
+ implementation 'com.github.Davidodari:picka:1.0.0'
 ```
 
 &copy; David Odari 2019
